@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Food = ({data}) => {
+const Food = ({data,handleAddCart}) => {
     const {strMeal,strArea,strInstructions,strCategory}=data;
 
     let sortString=strInstructions.slice(0 , 100);
@@ -27,7 +27,7 @@ const Food = ({data}) => {
 			<p className="leading-snug text-gray-400">{sortString}...</p>
             <div className='flex justify-between'>
                 <button className='cursor-pointer btn btn-outline btn-accent'>Read More</button>
-                <button className='btn btn-outline btn-accent'>Order</button>
+                <button onClick={()=>handleAddCart(data)} className='btn btn-outline btn-accent'>Order</button>
             </div>
 		</div>
 	</div>
